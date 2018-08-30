@@ -1,4 +1,5 @@
 #a013
+#還沒寫完
 import sys
 
 global roma

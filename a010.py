@@ -1,5 +1,6 @@
 #zerojudge a010
 #因數分解
+#還沒寫完
 
 def Prime(number):  #質數判斷
     for i in range(2,int(number ** (1/2))+1):
@@ -21,6 +22,7 @@ while True:
         Divisors = {}
         s = ''
         num = int(input())
+        i = 2
 
         while True:
             if Prime(num):  #質數則為 True
@@ -30,22 +32,35 @@ while True:
                     Divisors[num] = 1
                 break
 
-            for i in range( 2 , num + 1 ):
+            while  num >= i:
                 if Prime(i) == False:    #非質數則判斷為 True
-                    break
+                    continue
                 if num % i == 0:
                     num = int(num / i)
                     if i in Divisors:   #判斷 dict 內是否有該鍵
                         Divisors[i] += 1
                     else:
                         Divisors[i] = 1
+                    i = 1
+                i += 1
 
+            # for i in range( 2 , num + 1 ):
+            #     if Prime(i) == False:    #非質數則判斷為 True
+            #         break
+            #     if num % i == 0:
+            #         num = int(num / i)
+            #         if i in Divisors:   #判斷 dict 內是否有該鍵
+            #             Divisors[i] += 1
+            #         else:
+            #             Divisors[i] = 1
+
+        #output
         for i in Divisors:
-            if Divisors[i] == 1:
+            if Divisors[i]:
                 s += str(i) + " * "
             else:
                 s += str(i) + '^' + str(Divisors[i]) + " * "
-        print(s.strip(' * ') + '計算完畢')
+        print(s.strip(' * '))
 
     except EOFError:
         break
