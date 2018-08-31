@@ -1,9 +1,9 @@
-#a005: Eva 的回家作業
+# a005: Eva 的回家作業
 
 while True:
     try:
         a = [0] * 4
-        a[0] , a[1] , a[2] , a[3] = input().split()
+        a[0], a[1], a[2], a[3] = input().split()
         for i in range(len(a)):
             a[i] = int(a[i])
 

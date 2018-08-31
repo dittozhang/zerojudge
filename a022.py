@@ -1,6 +1,6 @@
-#a022 迴文
+# a022 迴文
 
-while  True:
+while True:
     try:
         s = input()
         s1 = s[:len(s)//2]
@@ -8,7 +8,7 @@ while  True:
             s2 = s[len(s)//2:]
         else:
             s2 = s[len(s)//2+1:]
-        s2 = s2[::-1]    #slice to reverse s2
+        s2 = s2[::-1]  # slice to reverse s2
         if s1 == s2:
             print('yes')
         else:

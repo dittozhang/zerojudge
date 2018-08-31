@@ -2,8 +2,9 @@
 # 質數回傳 True
 # 否則回傳 False
 
+
 def Prime(number):
-    for i in range(2,int(number ** (1/2))+1):
+    for i in range(2, int(number ** (1/2))+1):
         if i > 2 and i % 2 == 0:
             continue
         elif i > 3 and i % 3 == 0:
